@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+echo "Mis nimega kasutajat soovite teha?"
+
+read user
+
+if id -u "$user" > /dev/null 2>&1; then
+	echo "Kasutaja on juba olemas"
+	exit
+else
+	useradd -m $user
+
+fi
