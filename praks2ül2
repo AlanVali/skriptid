@@ -1,0 +1,8 @@
+#!/bin/bash
+kassud=$1
+input="./$kassud"
+while IFS= read kasutajanimed
+do
+useradd $kasutajanimed -m -s /bin/bash
+
+done < $kassud
