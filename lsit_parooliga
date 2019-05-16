@@ -1,0 +1,9 @@
+#!/bin/bash
+fail="cat /home/user/skriptid/kasutajad"
+n=1
+while read fail; do
+useradd -m $fail
+
+
+done < /home/user/skriptid/kasutajad
+

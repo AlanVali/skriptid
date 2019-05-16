@@ -1,0 +1,12 @@
+#!/bin/bash
+cat /home/user/skriptid/kasutajad | cut -d':' -f1
+read user
+cat /home/user/skriptid/kasutajad | cut -d':' -f2
+read pass
+while read $user $pass; do
+#useradd -m -p $user $pass
+echo  "$user"
+echo "$pass"
+useradd  -m -p $(openssl passwd -1 $pass) $user
+done
+
