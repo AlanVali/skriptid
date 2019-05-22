@@ -1,0 +1,11 @@
+#!/bin/bash
+kassud=$1
+input="./$kassud"
+while IFS= read line
+do
+	kasutaja=$(echo "$line" | cut -d\: -f1)
+	pass=$(echo "$line" | cut -d\: -f2)
+
+useradd -m -p $pass -s /bin/bash $kasutaja
+
+done < $kassud
